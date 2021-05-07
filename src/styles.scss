@@ -1,9 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; width: 100%; overflow-x: auto;}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
 body {
   position: fixed;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #303030;
+}
+
+h1 {
+  font-size: xx-large !important;
+  text-align: center;
+}
+
+.mat-divider {
+  border-top-color: rgb(24, 255, 255) !important;
+  border-top-width: 0.2rem !important;
 }
