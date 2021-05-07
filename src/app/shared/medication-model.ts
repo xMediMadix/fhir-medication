@@ -1,10 +1,13 @@
 export interface Medication {
   identifier?: Identifier[];
   code?: CodeableConcept;
+  /** mat-select formában kerül beolvasásra új gyógyszer létrehozásakor */
   status?: 'active ' | 'inactive ' | 'entered-in-error';
   manufacturer?: string;
   form?: CodeableConcept;
+  /** mat-slider formában kerül beolvasásra új gyógyszer létrehozásakor */
   amount?: Ratio;
+  /** dialog ablak lesz létrehozva, ahol lehet hozzáadni gyógyszerhez hatóanyagokat */
   ingredient?: Ingredient[];
   batch?: Batch;
 }
@@ -15,6 +18,7 @@ export interface Batch {
 }
 
 export interface Ingredient {
+  /** Az anyag neve lesz stringkét eltárolva */
   substance: string;
   isActive?: boolean;
   strength?: Ratio;
@@ -53,6 +57,7 @@ export interface Ratio {
 }
 
 export interface Quantity {
+  /** Ez lesz a tabletták száma az adott gyógyszer dobozban */
   value?: number;
   comparator?: '<' | '<=' | '>';
   unit?: string;

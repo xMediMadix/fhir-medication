@@ -1,1 +1,57 @@
-<p>add-medication works!</p>
+<mat-card id="main_container">
+  <mat-card-title><h1>Add New Medication</h1></mat-card-title>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-card-content>
+    <!-- Gyógyszer státusza -->
+    <mat-form-field appearance="fill">
+      <mat-label>Status of the medication</mat-label>
+      <mat-select>
+        <mat-option value=""></mat-option>
+        <mat-option *ngFor="let status of possibleStatuses" value="status"> {{status}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Gyártó neve -->
+    <mat-form-field appearance="fill">
+      <mat-label>Manufacturer of the medication</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+
+    <!-- Tabletták mennyisége a csomagban -->
+    <mat-label>Amount of drug in the package</mat-label>
+    <mat-slider color="primary" thumbLabel min="5" max="100" step="5" value="5"></mat-slider>
+
+    <!-- Anyagok hozzáadása a gyógyszerhez -->
+    <button mat-raised-button color="primary" (click)="openDialog()">Add Ingredients</button>
+
+    <table mat-table [dataSource]="ingredients" class="mat-elevation-z8">
+      <ng-container matColumnDef="substance">
+        <th mat-header-cell *matHeaderCellDef> Substance </th>
+        <td mat-cell *matCellDef="let ingredient"> {{ ingredient.substance }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <th mat-header-cell *matHeaderCellDef>Delete</th>
+        <td mat-cell *matCellDef="let ingredient">
+          <button mat-icon-button color="primary">
+            <mat-icon (click)="delete(ingredient)">delete_forever</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Submit</button>
+      <button mat-raised-button>Back</button>
+    </mat-card-actions>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+</mat-card>

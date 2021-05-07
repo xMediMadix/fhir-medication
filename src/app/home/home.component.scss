@@ -1,5 +1,19 @@
-h1{
-  font-size: xx-large;
+.mat-card {
   text-align: center;
+  align-items: center;
+  max-width: 40rem !important;
 }
 
+#main_container {
+  text-align: center !important;
+  margin: 0 auto;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+.mat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
