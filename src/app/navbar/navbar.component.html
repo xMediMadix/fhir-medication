@@ -1,17 +1,13 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <span> FHIR-Mediaction </span>
+    <span class="home" routerLink="/" routerLinkActive="mat-primary"> FHIR-Mediaction </span>
 
-    <button mat-icon-button class="example-icon"> <!-- routerLink="/list" routerLinkActive="mat-primary" -->
-      Main
+    <button mat-icon-button class="example-icon" routerLink="/list" routerLinkActive="mat-primary">
+      Search Medicines
     </button>
 
-    <button mat-icon-button class="example-icon"> <!-- routerLink="/add" routerLinkActive="mat-primary" -->
-      List
-    </button>
-
-    <button mat-icon-button class="example-icon"> <!-- routerLink="/add" routerLinkActive="mat-primary" -->
-      Add
+    <button mat-icon-button class="example-icon" routerLink="/add" routerLinkActive="mat-primary">
+      Add New Medicine
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
