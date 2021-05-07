@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {AddIngredientsDialogComponent} from './add-ingredients-dialog.component';
-import {Ingredient} from '../shared/medication-model';
+import {Ingredient} from '../../shared/medication-model';
 import {MatTable} from '@angular/material/table';
 
 @Component({

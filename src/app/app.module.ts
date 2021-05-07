@@ -7,11 +7,11 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {MaterialsModule} from './materials/materials.module';
 
 import {RouterModule} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {ListMedicationsComponent} from './list-medications/list-medications.component';
-import {AddMedicationComponent} from './add-medication/add-medication.component';
-import {EditMedicationComponent} from './edit-medication/edit-medication.component';
-import {AddIngredientsDialogComponent} from './add-medication/add-ingredients-dialog.component';
+import {HomeComponent} from './pages/home/home.component';
+import {ListMedicationsComponent} from './pages/list-medications/list-medications.component';
+import {AddMedicationComponent} from './pages/add-medication/add-medication.component';
+import {EditMedicationComponent} from './pages/edit-medication/edit-medication.component';
+import {AddIngredientsDialogComponent} from './pages/add-medication/add-ingredients-dialog.component';
 import {FormsModule} from '@angular/forms';
 
 
