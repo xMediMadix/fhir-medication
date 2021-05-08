@@ -2,7 +2,7 @@ export interface Medication {
   identifier?: Identifier[];
   code?: CodeableConcept;
   /** mat-select formában kerül beolvasásra új gyógyszer létrehozásakor */
-  status?: 'active ' | 'inactive ' | 'entered-in-error';
+  status?: 'active' | 'inactive' | 'entered-in-error';
   manufacturer?: string;
   form?: CodeableConcept;
   /** mat-slider formában kerül beolvasásra új gyógyszer létrehozásakor */

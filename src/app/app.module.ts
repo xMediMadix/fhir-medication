@@ -12,7 +12,7 @@ import {ListMedicationsComponent} from './pages/list-medications/list-medication
 import {AddMedicationComponent} from './pages/add-medication/add-medication.component';
 import {EditMedicationComponent} from './pages/edit-medication/edit-medication.component';
 import {AddIngredientsDialogComponent} from './pages/add-medication/add-ingredients-dialog.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -35,7 +35,8 @@ import {FormsModule} from '@angular/forms';
       {path: 'add', component: AddMedicationComponent},
       {path: 'edit', component: EditMedicationComponent},
     ]),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
