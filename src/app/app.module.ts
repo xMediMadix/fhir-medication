@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AmountsAsStringPipe} from './pipes/amountsAsString.pipe';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     ListMedicationsComponent,
     AddMedicationComponent,
     EditMedicationComponent,
-    AddIngredientsDialogComponent
+    AddIngredientsDialogComponent,
+    AmountsAsStringPipe
   ],
   imports: [
     BrowserModule,
