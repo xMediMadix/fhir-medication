@@ -9,6 +9,6 @@ export class AmountsAsStringPipe implements PipeTransform {
     if (!amount) {
       return null;
     }
-    return amount.numerator?.value + ' pieces/package';
+    return amount.numerator?.value + ' pieces / package';
   }
 }

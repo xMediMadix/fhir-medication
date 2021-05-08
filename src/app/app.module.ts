@@ -17,6 +17,7 @@ import {environment} from '../environments/environment';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AmountsAsStringPipe} from './pipes/amountsAsString.pipe';
+import {CodeAsStringPipe} from './pipes/codeAsString.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {AmountsAsStringPipe} from './pipes/amountsAsString.pipe';
     AddMedicationComponent,
     EditMedicationComponent,
     AddIngredientsDialogComponent,
-    AmountsAsStringPipe
+    AmountsAsStringPipe,
+    CodeAsStringPipe
   ],
   imports: [
     BrowserModule,
