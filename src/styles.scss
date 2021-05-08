@@ -22,3 +22,27 @@ h1 {
   border-top-color: rgb(24, 255, 255) !important;
   border-top-width: 0.2rem !important;
 }
+
+.mat-card {
+  text-align: center;
+  align-items: center;
+  max-width: 40rem !important;
+}
+
+#main_container {
+  text-align: center !important;
+  margin: 0 auto;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+.mat-card-content {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center !important;
+}
+
+.mat-form-field, .mat-header-cell {
+  text-align: center !important;
+}

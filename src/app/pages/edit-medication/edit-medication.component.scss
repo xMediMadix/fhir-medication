@@ -1,0 +1,25 @@
+h2 {
+  color: white;
+}
+
+.left{
+  float:left;
+  width:50%;
+}
+
+.right{
+  float:right;
+  width:50%;
+}
+
+.mat-list{
+  padding: 0;
+}
+
+.mat-subheader{
+  display:flex;
+  justify-content:center;
+}
+.mat-header-cell, .mat-subheader{
+  font-size: large;
+}

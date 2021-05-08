@@ -1,19 +1,27 @@
-.mat-card {
-  text-align: center;
-  align-items: center;
-  max-width: 40rem !important;
+.mat-card-image {
+  max-width: 60%;
+}
+p {
+  font-size: medium;
+}
+a{
+  font-weight: bolder;
+}
+a:link {
+  color: white;
+  text-decoration: none;
 }
 
-#main_container {
-  text-align: center !important;
-  margin: 0 auto;
-  min-width: 50%;
-  max-width: 100%;
+a:visited {
+  color: white;
+  text-decoration: none;
 }
 
-.mat-card-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-content: center;
+a:hover {
+  color: #18FFFF;
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
 }

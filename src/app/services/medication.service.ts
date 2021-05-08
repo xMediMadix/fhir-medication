@@ -35,12 +35,32 @@ export class MedicationService {
   }
 
   /**
+   * Egy medication elkérése id alapján firestoreból
+   * @param collectionName: jelenleg csak medications collection van
+   * @param id: az elérni kívánt medication id-je
+   */
+  getById(collectionName: string, id: string): AngularFirestoreDocument<Medication> {
+    return this.afs.collection(collectionName).doc(id);
+  }
+
+  /**
    * Táblázatból kiválasztott medication törlése a firestoreból
    * @param collectionName: jelenleg csak medications collection van
    * @param id: a törölni kívánt medication id-je
    */
   async delete(collectionName: string, id: string): Promise<string> {
     await this.afs.collection(collectionName).doc(id).delete();
+    return id;
+  }
+
+  /**
+   * Táblázatból kiválasztott medication módosítása
+   * @param collectionName: jelenleg csak medications collection van
+   * @param id: a módosítani kívánt medication id-je
+   * @param data: egy medication objektum a módosított mezőkkel
+   */
+  async update(collectionName: string, id: string, data: Medication): Promise<string> {
+    await this.afs.collection(collectionName).doc(id).update(data);
     return id;
   }
 }

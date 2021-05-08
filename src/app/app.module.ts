@@ -42,7 +42,7 @@ import {CodeAsStringPipe} from './pipes/codeAsString.pipe';
       {path: '', component: HomeComponent},
       {path: 'list', component: ListMedicationsComponent},
       {path: 'add', component: AddMedicationComponent},
-      {path: 'edit', component: EditMedicationComponent},
+      {path: 'edit/:id', component: EditMedicationComponent},
     ]),
     FormsModule,
     ReactiveFormsModule
