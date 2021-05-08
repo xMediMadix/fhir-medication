@@ -10,6 +10,7 @@ export interface Medication {
   /** dialog ablak lesz létrehozva, ahol lehet hozzáadni gyógyszerhez hatóanyagokat */
   ingredient?: Ingredient[];
   batch?: Batch;
+  id?: string;
 }
 
 export interface Batch {

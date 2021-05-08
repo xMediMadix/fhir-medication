@@ -13,6 +13,9 @@ import {AddMedicationComponent} from './pages/add-medication/add-medication.comp
 import {EditMedicationComponent} from './pages/edit-medication/edit-medication.component';
 import {AddIngredientsDialogComponent} from './pages/add-medication/add-ingredients-dialog.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -29,6 +32,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialsModule, // Az osszes hasznalt material kigyujtve egy masik modulba
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'list', component: ListMedicationsComponent},

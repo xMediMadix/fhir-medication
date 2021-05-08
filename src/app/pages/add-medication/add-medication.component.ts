@@ -4,6 +4,8 @@ import {AddIngredientsDialogComponent} from './add-ingredients-dialog.component'
 import {Ingredient, Medication, Ratio} from '../../shared/medication-model';
 import {MatTable} from '@angular/material/table';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {MedicationService} from '../../services/medication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-medication',
@@ -20,7 +22,7 @@ export class AddMedicationComponent implements OnInit {
     return this.form.get('status') as FormControl;
   }
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, public medicationService: MedicationService, private router: Router) {
   }
 
   form = new FormGroup({
@@ -62,8 +64,9 @@ export class AddMedicationComponent implements OnInit {
       amount: amountRatio,
       ingredient: this.ingredients
     };
-    console.log(medication);
-    // TODO: service létrehozása, firebase kapcsolat és firestore adattárolás megvalósítása
+    // Formról lekért adatok feltöltése firestoreba
+    this.medicationService.add('medications', medication)
+      .then(_ => this.router.navigate(['list']));
   }
 
   ngOnInit(): void {
