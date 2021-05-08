@@ -31,6 +31,23 @@
         </mat-error>
       </mat-form-field>
 
+      <!-- Gyógyszer neve / kódja -->
+      <mat-form-field appearance="fill">
+        <mat-label>Code that identify this medication</mat-label>
+        <textarea formControlName="code" matInput></textarea>
+        <mat-error *ngIf="code.invalid && (code.dirty || code.touched)">
+          <mat-error *ngIf="code.errors?.required">
+            Code input field is required.
+          </mat-error>
+          <mat-error *ngIf="code.errors?.minlength">
+            Code should be minimum {{ code.errors?.minlength.requiredLength }} characters.
+          </mat-error>
+          <mat-error *ngIf="code.errors?.maxlength">
+            Code should be less than {{ code.errors?.maxlength.requiredLength }} characters.
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+
       <!-- Tabletták mennyisége a csomagban -->
       <mat-label>Amount of drug in the package</mat-label>
       <mat-slider formControlName="amount" color="primary" thumbLabel min="5" max="100" step="5" value="5"></mat-slider>
@@ -63,7 +80,7 @@
     <mat-card-content>
       <mat-card-actions>
         <button (click)="submitMedication()" [disabled]="!form.valid" mat-raised-button color="primary">Submit</button>
-        <button mat-raised-button>Back</button>
+        <button mat-raised-button routerLink="/list">Back</button>
       </mat-card-actions>
     </mat-card-content>
     <mat-divider></mat-divider>

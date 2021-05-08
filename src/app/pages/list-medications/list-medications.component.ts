@@ -18,6 +18,7 @@ export class ListMedicationsComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = [
     'status',
     'manufacturer',
+    'code',
     'amount',
     'actions'
   ];

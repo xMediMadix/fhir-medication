@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {AddIngredientsDialogComponent} from './add-ingredients-dialog.component';
-import {Ingredient, Medication, Ratio} from '../../shared/medication-model';
+import {CodeableConcept, Ingredient, Medication, Ratio} from '../../shared/medication-model';
 import {MatTable} from '@angular/material/table';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MedicationService} from '../../services/medication.service';
@@ -22,12 +22,21 @@ export class AddMedicationComponent implements OnInit {
     return this.form.get('status') as FormControl;
   }
 
+  get code(): FormControl {
+    return this.form.get('code') as FormControl;
+  }
+
   constructor(public dialog: MatDialog, public medicationService: MedicationService, private router: Router) {
   }
 
   form = new FormGroup({
     status: new FormControl('', Validators.required),
     manufacturer: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(25)
+    ]),
+    code: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(25)
@@ -51,6 +60,11 @@ export class AddMedicationComponent implements OnInit {
   @ViewChild(MatTable) table: MatTable<any>;
 
   submitMedication(): void {
+    // FHIR-ben: A code CodeableConcept típusú, aminek van egy text adattagja,
+    // ezt az adattagot inicializálom a form-ról érkezett code-dal
+    const codeableConcept: CodeableConcept = {
+      text: this.form.get('code')?.value
+    };
     // FHIR-ben: Amount of drug in package, tehát jelen esetben ez egy egész szám lesz,
     // így követve a szabványt a hányados számlálója a megadott szám, míg a nevező konstans 1
     const amountRatio: Ratio = {
@@ -61,6 +75,7 @@ export class AddMedicationComponent implements OnInit {
     const medication: Medication = {
       status: this.form.get('status')?.value,
       manufacturer: this.form.get('manufacturer')?.value,
+      code: codeableConcept,
       amount: amountRatio,
       ingredient: this.ingredients
     };
