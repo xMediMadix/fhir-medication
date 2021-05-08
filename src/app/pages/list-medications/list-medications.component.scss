@@ -1,0 +1,28 @@
+.mat-card {
+  text-align: center;
+  align-items: center;
+  max-width: 40rem !important;
+}
+
+#main_container {
+  text-align: center !important;
+  margin: 0 auto;
+  min-width: 50%;
+  max-width: 100%;
+}
+
+table tr td {
+  padding: 0 10px;
+}
+
+table.mat-table {
+  width: 100%;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  justify-content: center;
+  text-align: center;
+}
